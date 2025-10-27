@@ -1,0 +1,16 @@
+# Python Virtual Environment
+venv/
+.venv/
+__pycache__/
+
+# Dependencies and Lock Files
+*.egg-info
+build/
+dist/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Environment Variables
+.env

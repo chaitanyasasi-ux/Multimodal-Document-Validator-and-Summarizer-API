@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+pydantic
+python-multipart    # Required for file uploads in FastAPI
+easyocr             # For local OCR
+opencv-python-headless # EasyOCR dependency
+Pillow              # EasyOCR dependency
+google-genai            # Or use the specific library for Gemini/Claude/DeepSeek
+python-dotenv  # Command to delete the venv folder on Windows
+rmdir /s /q venv     # For loading API keys
