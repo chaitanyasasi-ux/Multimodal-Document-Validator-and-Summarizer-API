@@ -1,11 +1,11 @@
 # Multimodal-Document-Validator-and-Summarizer-API
 Multimodal AI Document Agent API (Validator & Summarizer)
-🌟 Project Overview
+ Project Overview
 This project implements a resilient, two-stage Large Language Model (LLM) pipeline exposed as a high-performance API using FastAPI. It's designed to process documents from both text and image sources, ensuring content safety and professionalism before generating a concise summary.
 
 The core value lies in demonstrating MLOps-centric engineering concepts crucial for production environments.
 
-✨ Core Features & Advanced Engineering
+ Core Features & Advanced Engineering
 Category,Feature,Technical Skill Demonstrated
 Pipeline Architecture,LLM Chaining (Guardrail),The system executes a conditional workflow: Validate → Summarize. It uses the first LLM call as a safety check before triggering the more expensive summarization.
 Multimodal Input,Integrated OCR,"Accepts raw text or image files (.png, .jpg, etc.) and uses EasyOCR for text extraction."
@@ -13,7 +13,7 @@ Performance,Model Caching,"The resource-intensive EasyOCR model instance is load
 Reliability,Exponential Backoff & Retries,"Implements robust logic to catch transient API errors (e.g., 503 Service Unavailable) and automatically retry the call with increasing delay, maximizing uptime."
 API Design,Pydantic Schemas & Structured Errors,"Enforces clear data contracts for inputs/outputs and returns specific, machine-readable error codes (OCR_FAILED, MISSING_INPUT, etc.)."
 
-🛠️ Technology Stack
+ Technology Stack
 Component,Technology,Role
 API Framework,FastAPI,High-performance API routing and serving.
 LLM Backend,Google Gemini API,Core intelligence for validation and summarization.
@@ -21,7 +21,7 @@ Image Processing,"EasyOCR, Pillow",Optical Character Recognition (OCR) and image
 Environment,python-dotenv,Secure management of API keys and configuration.
 Server,Uvicorn,ASGI server for asynchronous request handling.
 
-🚀 Getting Started
+ Getting Started
 Prerequisites
 Python 3.8+
 
@@ -49,7 +49,7 @@ Running the API
 Start the Uvicorn server:
 uvicorn main:app --reload
 The API is now running at: http://127.0.0.1:8000
-💻 Usage
+ USAGE:-
 The interactive API documentation (Swagger UI) is available at: http://127.0.0.1:8000/docs
 
 Endpoint: POST /process-document
@@ -69,14 +69,14 @@ Example Success Response (200 OK)
     "3. Summary generated concisely in three points."
   ]
 }
-💡 Future Enhancements
+Future Enhancements
 The project is structured for easy extension. Potential next steps include:
 
 Dockerization: Adding a Dockerfile for easy deployment via tools like AWS ECS or GCP Cloud Run.
 
 Structured Logging: Implementing JSON logging for production monitoring and analysis.
 
-Database Integration: Connecting to MySQL (as per project skills) to persist results.
+Database Integration: Connecting to MySQL to persist results.
 
 Asynchronous LLM Client: Refactoring LLM calls to use a true async client for higher concurrency.
 
